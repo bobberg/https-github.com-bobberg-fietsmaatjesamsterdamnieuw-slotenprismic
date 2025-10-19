@@ -54,7 +54,7 @@ const InfoCards = ({ slice }) => {
  */
 const InfoCardsItem = ({ item, variation, isExpanded, toggleExpanded }) => {
   return (
-    <div
+    <a href={item.link && item.link.url ? (item.link.link_type !== "Web" ? undefined : 'http://' + item.link.url) : undefined} target={item.link && item.link.target ? item.link.target : undefined}
       className={`
         my-4 group flex flex-col p-4 border border-primary rounded-lg
         hover:bg-primary w-[320px] md:w-[250px] m-4 items-center justify-center text-center gap-1
