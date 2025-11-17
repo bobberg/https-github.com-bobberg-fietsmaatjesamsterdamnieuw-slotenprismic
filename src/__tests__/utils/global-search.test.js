@@ -52,7 +52,7 @@ describe('globalSearch', () => {
       {
         id: '2',
         title: 'Fietsroutes - Route Title 1',
-        url: '/doe-mee/fietsroutes#route-1',
+        url: '/word-fietsmaatje/fietsroutes#route-1',
       },
       {
         id: '3',

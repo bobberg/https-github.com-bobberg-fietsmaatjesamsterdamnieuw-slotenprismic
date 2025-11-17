@@ -21,7 +21,7 @@ export const globalSearch = async (query) => {
           title = `Nieuws - ${doc.data.title[0].text}`;
           break;
         case 'route':
-          url = `/doe-mee/fietsroutes#${doc.uid}`;
+          url = `/word-fietsmaatje/fietsroutes#${doc.uid}`;
           title = `Fietsroutes - ${doc.data.title}`;
           break;
         default:
