@@ -17,6 +17,7 @@ const ContactForm = ({ slice }) => {
     email: '',
     telefoonnummer: '',
     woonplaats: '',
+    geslacht: '',
     message: ''
   });
   const [errorMessage, setErrorMessage] = useState('');
@@ -146,6 +147,25 @@ const ContactForm = ({ slice }) => {
               value={formData.woonplaats}
               onChange={handleInputChange}
             />
+          </label>
+          <label>
+            Geslacht:
+            <select
+              name="geslacht"
+              className="
+                text-black text-xs 
+                w-full p-2 mb-4 
+                bg-white rounded
+              "
+              value={formData.geslacht}
+              onChange={handleInputChange}
+            >
+              <option value="">Selecteer...</option>
+              <option value="Man">Man</option>
+              <option value="Vrouw">Vrouw</option>
+              <option value="Anders">Anders</option>
+              <option value="Wil ik niet zeggen">Wil ik niet zeggen</option>
+            </select>
           </label>
           <label>
             <textarea
