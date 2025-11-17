@@ -56,7 +56,11 @@ const Page = () => {
                 )}
             </main>
             <footer className="bottom-0 w-full h-12 border-t border-primary flex items-center justify-center">
-                <h6>Website door <a href="https://www.manoukvandraanen.com" target="_blank" rel="noopener noreferrer" className="text-xs">Manouk van Draanen</a></h6>
+                <div className="flex items-center gap-4 text-xs">
+                  <h6>Website door <a href="https://www.manoukvandraanen.com" target="_blank" rel="noopener noreferrer">Manouk van Draanen</a></h6>
+                  <span>|</span>
+                  <a href="/privacy">Privacybeleid</a>
+                </div>
             </footer>
         </div>
     );
