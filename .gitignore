@@ -13,6 +13,12 @@
 # testing
 /coverage
 
+# prismic content dump - local reference only
+/prismic-dump
+
+# vscode settings with credentials
+.vscode/
+
 # next.js
 /.next/
 /out/
