@@ -23,7 +23,7 @@ export default function PrivacyPage() {
           <a href="mailto:secretaris@fietsmaatjesamsterdamnieuw-sloten.nl">
             secretaris@fietsmaatjesamsterdamnieuw-sloten.nl
           </a>
-          , KvK nummer 95852697, telefoon [TELEFOONNUMMER_INVULLEN].
+          , KvK nummer 95852697
         </p>
 
         <h2>2. Welke gegevens verwerkt Fietsmaatjes Amsterdam Nieuw-Sloten en voor welk doel</h2>
