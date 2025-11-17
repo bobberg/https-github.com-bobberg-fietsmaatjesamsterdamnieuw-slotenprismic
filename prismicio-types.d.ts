@@ -12,7 +12,8 @@ type PageDocumentDataSlicesSlice =
   | LatestNewsSlice
   | SectionSlice
   | ContentCardsSlice
-  | ContentcardSlice;
+  | ContentcardSlice
+  | TextBlockSlice;
 
 /**
  * Content for Pagina documents
@@ -1003,6 +1004,105 @@ type ContentcardSliceVariation =
 export type ContentcardSlice = prismic.SharedSlice<
   "contentcard",
   ContentcardSliceVariation
+>;
+
+/**
+ * Primary content in *TextBlock → Default → Primary*
+ */
+export interface TextBlockSliceDefaultPrimary {
+  /**
+   * Tekst field in *TextBlock → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Voer content in
+   * - **API ID Path**: text_block.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Breedte field in *TextBlock → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Kies een breedte
+   * - **Default Value**: medium
+   * - **API ID Path**: text_block.default.primary.width
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  width: prismic.SelectField<"narrow" | "medium" | "wide" | "full", "filled">;
+
+  /**
+   * Uitlijning field in *TextBlock → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Kies een uitlijning
+   * - **Default Value**: left
+   * - **API ID Path**: text_block.default.primary.alignment
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  alignment: prismic.SelectField<"left" | "center", "filled">;
+
+  /**
+   * Verticale marge field in *TextBlock → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Kies de verticale ruimte
+   * - **Default Value**: medium
+   * - **API ID Path**: text_block.default.primary.padding
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  padding: prismic.SelectField<"none" | "small" | "medium" | "large", "filled">;
+
+  /**
+   * Achtergrond field in *TextBlock → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Kies een achtergrond
+   * - **Default Value**: none
+   * - **API ID Path**: text_block.default.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_color: prismic.SelectField<"none" | "secondary" | "primary", "filled">;
+
+  /**
+   * Minimale hoogte (px) field in *TextBlock → Default → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: Bijvoorbeeld 400
+   * - **API ID Path**: text_block.default.primary.min_height
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  min_height: prismic.NumberField;
+}
+
+/**
+ * Default variation for TextBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Vrije tekst met instelbare breedte en uitlijning
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextBlockSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TextBlockSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TextBlock*
+ */
+type TextBlockSliceVariation = TextBlockSliceDefault;
+
+/**
+ * TextBlock Shared Slice
+ *
+ * - **API ID**: `text_block`
+ * - **Description**: Vrijstaand tekstblok met flexibele lay-out
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextBlockSlice = prismic.SharedSlice<
+  "text_block",
+  TextBlockSliceVariation
 >;
 
 /**

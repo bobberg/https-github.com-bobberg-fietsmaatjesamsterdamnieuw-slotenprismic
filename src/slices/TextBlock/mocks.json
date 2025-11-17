@@ -1,0 +1,51 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "body": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading2",
+            "content": {
+              "text": "Vrij tekstblok"
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Gebruik dit slice om flexibele tekstsecties te maken met instelbare breedte en uitlijning. Voeg paragrafen, koppen en lijsten toe zoals gewenst."
+            }
+          }
+        ]
+      },
+      "width": {
+        "__TYPE__": "FieldContent",
+        "value": "wide",
+        "type": "Select"
+      },
+      "alignment": {
+        "__TYPE__": "FieldContent",
+        "value": "center",
+        "type": "Select"
+      },
+      "padding": {
+        "__TYPE__": "FieldContent",
+        "value": "medium",
+        "type": "Select"
+      },
+      "background_color": {
+        "__TYPE__": "FieldContent",
+        "value": "secondary",
+        "type": "Select"
+      },
+      "min_height": {
+        "__TYPE__": "FieldContent",
+        "value": 320,
+        "type": "Number"
+      }
+    },
+    "items": []
+  }
+]

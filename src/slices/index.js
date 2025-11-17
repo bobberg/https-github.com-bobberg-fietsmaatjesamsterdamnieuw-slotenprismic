@@ -10,5 +10,6 @@ export const components = {
   faq: dynamic(() => import("./Faq")),
   i_frame: dynamic(() => import("./IFrame")),
   latest_news: dynamic(() => import("./LatestNews")),
+  text_block: dynamic(() => import("./TextBlock")),
   section: dynamic(() => import("./Section")),
 };

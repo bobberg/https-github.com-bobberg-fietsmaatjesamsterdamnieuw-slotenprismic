@@ -74,6 +74,9 @@
             },
             "contentcard": {
               "type": "SharedSlice"
+            },
+            "text_block": {
+              "type": "SharedSlice"
             }
           }
         }
