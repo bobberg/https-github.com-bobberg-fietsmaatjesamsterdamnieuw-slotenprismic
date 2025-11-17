@@ -134,7 +134,7 @@ const ContactForm = ({ slice }) => {
             </label>
           </div>
           <label>
-            Woonplaats en buurt:
+            Postcode:
             <input
               type="text"
               name="woonplaats"
