@@ -345,11 +345,143 @@ export type SocialDocument<Lang extends string = string> =
     Lang
   >;
 
+interface PrivacyPolicyDocumentDataSectionsItem {
+  /**
+   * Sectietitel field in *Privacybeleid → Secties*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: Titel van de sectie
+   * - **API ID Path**: privacy_policy.sections[].section_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_title: prismic.TitleField;
+
+  /**
+   * Sectietekst field in *Privacybeleid → Secties*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Inhoud van de sectie
+   * - **API ID Path**: privacy_policy.sections[].section_body
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_body: prismic.RichTextField;
+}
+
+/**
+ * Content for Privacybeleid documents
+ */
+interface PrivacyPolicyDocumentData {
+  /**
+   * Titel field in *Privacybeleid*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: Titel van het privacybeleid
+   * - **API ID Path**: privacy_policy.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Introductie field in *Privacybeleid*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Korte introductie van het privacybeleid
+   * - **API ID Path**: privacy_policy.introduction
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  introduction: prismic.RichTextField;
+
+  /**
+   * Secties field in *Privacybeleid*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: privacy_policy.sections[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  sections: prismic.GroupField<Simplify<PrivacyPolicyDocumentDataSectionsItem>>;
+
+  /**
+   * Contact e-mailadres field in *Privacybeleid*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: bijv. privacy@fietsmaatjes.nl
+   * - **API ID Path**: privacy_policy.contact_email
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  contact_email: prismic.KeyTextField;
+
+  /**
+   * Contact telefoonnummer field in *Privacybeleid*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: bijv. 085 - 123 45 67
+   * - **API ID Path**: privacy_policy.contact_phone
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  contact_phone: prismic.KeyTextField;
+
+  /**
+   * KvK-nummer field in *Privacybeleid*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: bijv. 12345678
+   * - **API ID Path**: privacy_policy.kvk_number
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  kvk_number: prismic.KeyTextField;
+
+  /**
+   * Slottekst field in *Privacybeleid*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Slottekst of laatste opmerking
+   * - **API ID Path**: privacy_policy.closing_note
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  closing_note: prismic.RichTextField;
+
+  /**
+   * Datum vastgesteld field in *Privacybeleid*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: Kies de datum van vaststelling
+   * - **API ID Path**: privacy_policy.last_updated
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  last_updated: prismic.DateField;
+}
+
+/**
+ * Privacybeleid document from Prismic
+ *
+ * - **API ID**: `privacy_policy`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PrivacyPolicyDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<PrivacyPolicyDocumentData>,
+    "privacy_policy",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | PageDocument
   | PostDocument
   | RouteDocument
-  | SocialDocument;
+  | SocialDocument
+  | PrivacyPolicyDocument;
 
 /**
  * Default variation for Archive Slice

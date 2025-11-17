@@ -1,0 +1,88 @@
+{
+  "format": "custom",
+  "id": "privacy_policy",
+  "label": "Privacybeleid",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Titel",
+          "placeholder": "Titel van het privacybeleid",
+          "single": "heading1"
+        }
+      },
+      "introduction": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Introductie",
+          "placeholder": "Korte introductie van het privacybeleid",
+          "multi": "paragraph,heading2,heading3,strong,em,list-item,o-list-item"
+        }
+      },
+      "sections": {
+        "type": "Group",
+        "config": {
+          "label": "Secties",
+          "repeat": true,
+          "fields": {
+            "section_title": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Sectietitel",
+                "placeholder": "Titel van de sectie",
+                "single": "heading2"
+              }
+            },
+            "section_body": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Sectietekst",
+                "placeholder": "Inhoud van de sectie",
+                "multi": "paragraph,heading3,heading4,strong,em,list-item,o-list-item"
+              }
+            }
+          }
+        }
+      },
+      "contact_email": {
+        "type": "Text",
+        "config": {
+          "label": "Contact e-mailadres",
+          "placeholder": "bijv. privacy@fietsmaatjes.nl"
+        }
+      },
+      "contact_phone": {
+        "type": "Text",
+        "config": {
+          "label": "Contact telefoonnummer",
+          "placeholder": "bijv. 085 - 123 45 67"
+        }
+      },
+      "kvk_number": {
+        "type": "Text",
+        "config": {
+          "label": "KvK-nummer",
+          "placeholder": "bijv. 12345678"
+        }
+      },
+      "closing_note": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Slottekst",
+          "placeholder": "Slottekst of laatste opmerking",
+          "multi": "paragraph,heading3,strong,em"
+        }
+      },
+      "last_updated": {
+        "type": "Date",
+        "config": {
+          "label": "Datum vastgesteld",
+          "placeholder": "Kies de datum van vaststelling"
+        }
+      }
+    }
+  }
+}

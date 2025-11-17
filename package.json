@@ -13,6 +13,7 @@
   "dependencies": {
     "@formspree/react": "^2.5.1",
     "@prismicio/client": "^7.13.1",
+    "@prismicio/mcp-server": "^0.0.19",
     "@prismicio/next": "^1.7.1",
     "@prismicio/react": "^2.9.1",
     "jest-environment-jsdom": "^29.7.0",
