@@ -24,7 +24,7 @@ const Logos = ({ slice }) => {
                  <PrismicNextLink field={item.link} className="hover:opacity-80 transition-opacity duration-300">
                    <PrismicNextImage 
                      field={item.logo} 
-                     className="max-h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                     className="max-h-24 w-auto object-contain"
                      fallbackAlt=""
                    />
                  </PrismicNextLink>
