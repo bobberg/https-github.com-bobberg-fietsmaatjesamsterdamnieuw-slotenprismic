@@ -12,4 +12,5 @@ export const components = {
   latest_news: dynamic(() => import("./LatestNews")),
   text_block: dynamic(() => import("./TextBlock")),
   section: dynamic(() => import("./Section")),
+  logos: dynamic(() => import("./Logos")),
 };
