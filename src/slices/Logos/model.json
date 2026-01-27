@@ -1,0 +1,52 @@
+{
+  "id": "logos",
+  "type": "SharedSlice",
+  "name": "Logos",
+  "description": "Logos",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Titel",
+            "placeholder": "Titel van deze sectie (optioneel)",
+            "allowTargetBlank": true,
+            "single": "heading2,heading3"
+          }
+        }
+      },
+      "items": {
+        "logo": {
+          "type": "Image",
+          "config": {
+            "label": "Logo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link",
+            "placeholder": "Link naar website sponsor",
+            "select": null
+          }
+        },
+        "name": {
+          "type": "Text",
+          "config": {
+            "label": "Naam",
+            "placeholder": "Naam van de sponsor (voor alt text)"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,4 +1,17 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.prismic.io',
+      },
+      {
+        protocol: 'https',
+        hostname: 'fietsmaatjes.cdn.prismic.io',
+      },
+    ],
+  },
+};
 
 export default nextConfig;
