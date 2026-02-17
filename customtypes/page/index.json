@@ -54,6 +54,9 @@
             "contact_form": {
               "type": "SharedSlice"
             },
+            "contact_form_validated": {
+              "type": "SharedSlice"
+            },
             "i_frame": {
               "type": "SharedSlice"
             },
