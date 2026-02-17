@@ -26,12 +26,7 @@
           "config": {
             "label": "Breedte",
             "placeholder": "Kies een breedte",
-            "options": [
-              "narrow",
-              "medium",
-              "wide",
-              "full"
-            ],
+            "options": ["narrow", "medium", "wide", "full"],
             "default_value": "medium"
           }
         },
@@ -40,10 +35,7 @@
           "config": {
             "label": "Uitlijning",
             "placeholder": "Kies een uitlijning",
-            "options": [
-              "left",
-              "center"
-            ],
+            "options": ["left", "center"],
             "default_value": "left"
           }
         },
@@ -52,12 +44,7 @@
           "config": {
             "label": "Verticale marge",
             "placeholder": "Kies de verticale ruimte",
-            "options": [
-              "none",
-              "small",
-              "medium",
-              "large"
-            ],
+            "options": ["none", "small", "medium", "large"],
             "default_value": "medium"
           }
         },
@@ -66,11 +53,7 @@
           "config": {
             "label": "Achtergrond",
             "placeholder": "Kies een achtergrond",
-            "options": [
-              "none",
-              "secondary",
-              "primary"
-            ],
+            "options": ["none", "secondary", "primary"],
             "default_value": "none"
           }
         },
