@@ -1,0 +1,53 @@
+{
+  "id": "contact_form_validated",
+  "type": "SharedSlice",
+  "name": "ContactFormValidated",
+  "description": "Contact form with postal code validation",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Contact form that validates postal codes against allowed Amsterdam area codes",
+      "imageUrl": "",
+      "primary": {
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Begeleidende tekst",
+            "placeholder": "Begeleidende tekst",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item,image"
+          }
+        },
+        "allowed_postal_codes": {
+          "type": "Text",
+          "config": {
+            "label": "Toegestane postcodes",
+            "placeholder": "1066,1060,1065,1068,1069"
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "inschrijfformulier",
+      "name": "Inschrijfformulier",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Registration form variant with postal code validation",
+      "imageUrl": "",
+      "primary": {
+        "allowed_postal_codes": {
+          "type": "Text",
+          "config": {
+            "label": "Toegestane postcodes",
+            "placeholder": "1066,1060,1065,1068,1069"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
