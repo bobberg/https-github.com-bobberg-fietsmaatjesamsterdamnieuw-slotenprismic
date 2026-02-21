@@ -1,0 +1,38 @@
+{
+  "id": "contact_form_sponsor",
+  "type": "SharedSlice",
+  "name": "ContactFormSponsor",
+  "description": "Contact form for sponsors",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Contact form for sponsors",
+      "imageUrl": "",
+      "primary": {
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Begeleidende tekst",
+            "placeholder": "Begeleidende tekst",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item,image"
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "sponsorformulier",
+      "name": "Aanmeldformulier",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Registration form for sponsors",
+      "imageUrl": "",
+      "primary": {},
+      "items": {}
+    }
+  ]
+}

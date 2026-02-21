@@ -57,6 +57,9 @@
             "contact_form_validated": {
               "type": "SharedSlice"
             },
+            "contact_form_sponsor": {
+              "type": "SharedSlice"
+            },
             "i_frame": {
               "type": "SharedSlice"
             },

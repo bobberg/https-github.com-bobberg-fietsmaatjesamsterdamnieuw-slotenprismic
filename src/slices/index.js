@@ -6,6 +6,7 @@ export const components = {
   archive: dynamic(() => import("./Archive")),
   contact_form: dynamic(() => import("./ContactForm")),
   contact_form_validated: dynamic(() => import("./ContactFormValidated")),
+  contact_form_sponsor: dynamic(() => import("./ContactFormSponsor")),
   content_cards: dynamic(() => import("./ContentCards")),
   contentcard: dynamic(() => import("./InfoCards")),
   faq: dynamic(() => import("./Faq")),
