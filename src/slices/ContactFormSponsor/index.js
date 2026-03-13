@@ -12,8 +12,7 @@ import { PrismicRichText } from "@prismicio/react";
 const ContactFormSponsor = ({ slice }) => {
   const [state, handleSubmit] = useForm("mbllqjqb");
   const [formData, setFormData] = useState({
-    voornaam: '',
-    achternaam: '',
+    contactpersoon: '',
     email: '',
     telefoonnummer: '',
     bedrijfsnaam: '',
@@ -35,10 +34,10 @@ const ContactFormSponsor = ({ slice }) => {
   // Handle form submission
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    const { voornaam, email, woonplaats } = formData;
+    const { contactpersoon, email } = formData;
 
     // Check required fields
-    if (!voornaam || !email || !woonplaats) {
+    if (!contactpersoon || !email) {
       setErrorMessage('Vul alle verplichte velden in.');
       return;
     }
@@ -79,36 +78,20 @@ const ContactFormSponsor = ({ slice }) => {
           "
           onSubmit={handleFormSubmit}
         >
-          <div className="lg:flex lg:gap-2">
-            <label className="lg:w-1/2">
-              Voornaam: <span className="text-red-500">*</span>
-              <input
-                type="text"
-                name="voornaam"
-                className="
-                  text-black text-xs 
-                  w-full p-2 
-                  bg-white rounded
-                "
-                value={formData.voornaam}
-                onChange={handleInputChange}
-              />
-            </label>
-            <label className="lg:w-1/2">
-              Achternaam:
-              <input
-                type="text"
-                name="achternaam"
-                className="
-                  text-black text-xs 
-                  w-full p-2 
-                  bg-white rounded
-                "
-                value={formData.achternaam}
-                onChange={handleInputChange}
-              />
-            </label>
-          </div>
+          <label>
+            Contactpersoon: <span className="text-red-500">*</span>
+            <input
+              type="text"
+              name="contactpersoon"
+              className="
+                text-black text-xs 
+                w-full p-2 mb-4
+                bg-white rounded
+              "
+              value={formData.contactpersoon}
+              onChange={handleInputChange}
+            />
+          </label>
           <div className="lg:flex lg:gap-2">
             <label className="lg:w-1/2">
               Email: <span className="text-red-500">*</span>
@@ -141,7 +124,7 @@ const ContactFormSponsor = ({ slice }) => {
             </label>
           </div>
           <label>
-            Bedrijfsnaam: <span className="text-red-500">*</span>
+            Bedrijfsnaam:
             <input
               name="bedrijfsnaam"
               className="
