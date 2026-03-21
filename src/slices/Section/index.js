@@ -13,6 +13,7 @@ const Section = ({ slice }) => {
   const bgColor = slice.primary.background_color;
   const imageRef = useRef(null);
   const [maxHeight, setMaxHeight] = useState('auto');
+  const sectionId = slice.primary.anchor_id || undefined;
 
   useEffect(() => {
     if (imageRef.current) {
@@ -68,7 +69,7 @@ const Section = ({ slice }) => {
 
   // Function to render section with image and text
   const renderSectionWithImageAndText = (imageStyles, textStyles, richTextComponents) => (
-    <section className={`${sectionStyles} ${bgColor === "lichtblauw" ? "bg-secondary" : "bg-white"} flex flex-col md:flex-row items-center`}>
+    <section id={sectionId} className={`${sectionStyles} ${bgColor === "lichtblauw" ? "bg-secondary" : "bg-white"} flex flex-col md:flex-row items-center`}>
       {renderImage(slice.primary.image, imageStyles)}
       <div className={`${textContainerStyles} ${textStyles}`}>
         {renderRichText(slice.primary.body, richTextComponents)}
@@ -113,7 +114,7 @@ const Section = ({ slice }) => {
     return renderSectionWithImageAndText("md:w-[40dvw] max-h-[500px]", "md:w-[60dvw]", defaultRichTextComponents);
   } else if (variation === "vertical") {
     return (
-      <section className={`${sectionStyles} flex flex-col`}>
+      <section id={sectionId} className={`${sectionStyles} flex flex-col`}>
         {renderImage(slice.primary.image, "w-full h-[70dvh]")}
         <div className="py-4 px-8 md:px-40 w-full">
           {renderRichText(slice.primary.body, verticalRichTextComponents)}
@@ -122,7 +123,7 @@ const Section = ({ slice }) => {
     );
   } else if (variation === "mirrored") {
     return (
-      <section className={`${sectionStyles} md:flex-row gap-10 py-10 px-8 lg:px-36 ${bgColor === "Lichtblauw" ? "bg-secondary" : "bg-white"} flex flex-col`}>
+      <section id={sectionId} className={`${sectionStyles} md:flex-row gap-10 py-10 px-8 lg:px-36 ${bgColor === "Lichtblauw" ? "bg-secondary" : "bg-white"} flex flex-col`}>
         <div className="p-4 md:w-[60dvw]">
           {renderRichText(slice.primary.body, mirroredRichTextComponents)}
         </div>
@@ -131,7 +132,7 @@ const Section = ({ slice }) => {
     );
   } else if (variation === "stacked") {
     return (
-      <section className="relative h-full w-full flex flex-col gap-6">
+      <section id={sectionId} className="relative h-full w-full flex flex-col gap-6">
         {renderImage(slice.primary.image, "rounded-none w-full h-[70dvh]")}
         <div className="absolute inset-0 flex items-end mb-14 justify-center">
           {slice.primary.body != '' &&
@@ -145,9 +146,11 @@ const Section = ({ slice }) => {
     );
   } else if (variation === "noImage") {
     return (
-      <div className="px-8 py-8 md:px-52 flex flex-col w-full text-center items-center justify-center">
-        {renderRichText(slice.primary.body, {})}
-      </div>
+      <section id={sectionId}>
+        <div className="px-8 py-8 md:px-52 flex flex-col w-full text-center items-center justify-center">
+          {renderRichText(slice.primary.body, {})}
+        </div>
+      </section>
     );
   } else {
     return <div>test</div>;

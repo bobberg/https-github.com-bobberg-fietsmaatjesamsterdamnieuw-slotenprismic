@@ -42,6 +42,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "Lichtblauw",
 				"type": "Select"
+			},
+			"anchor_id": {
+				"__TYPE__": "FieldContent",
+				"value": "some",
+				"type": "Text"
 			}
 		},
 		"items": []
@@ -83,6 +88,11 @@
 						}
 					}
 				]
+			},
+			"anchor_id": {
+				"__TYPE__": "FieldContent",
+				"value": "loud",
+				"type": "Text"
 			}
 		},
 		"items": [
@@ -134,6 +144,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "Lichtblauw",
 				"type": "Select"
+			},
+			"anchor_id": {
+				"__TYPE__": "FieldContent",
+				"value": "far",
+				"type": "Text"
 			}
 		},
 		"items": [
@@ -180,6 +195,11 @@
 						}
 					}
 				]
+			},
+			"anchor_id": {
+				"__TYPE__": "FieldContent",
+				"value": "earlier",
+				"type": "Text"
 			}
 		},
 		"items": [
@@ -203,6 +223,11 @@
 						}
 					}
 				]
+			},
+			"anchor_id": {
+				"__TYPE__": "FieldContent",
+				"value": "managed",
+				"type": "Text"
 			}
 		},
 		"items": [
