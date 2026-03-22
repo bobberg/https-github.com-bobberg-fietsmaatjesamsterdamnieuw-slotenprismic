@@ -12,17 +12,17 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "anchor_id": {
-          "type": "Text",
-          "config": {
-            "label": "Anker ID",
-            "placeholder": ""
-          }
-        },
         "label": {
           "type": "Text",
           "config": {
             "label": "Label",
+            "placeholder": ""
+          }
+        },
+        "anchor_id": {
+          "type": "Text",
+          "config": {
+            "label": "Anker ID",
             "placeholder": ""
           }
         }

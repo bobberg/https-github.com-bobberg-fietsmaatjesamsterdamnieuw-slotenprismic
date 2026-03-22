@@ -567,16 +567,6 @@ export type AllDocumentTypes =
  */
 export interface AnchorSliceDefaultPrimary {
   /**
-   * Anker ID field in *Anchor → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: anchor.default.primary.anchor_id
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  anchor_id: prismic.KeyTextField;
-
-  /**
    * Label field in *Anchor → Default → Primary*
    *
    * - **Field Type**: Text
@@ -585,6 +575,16 @@ export interface AnchorSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   label: prismic.KeyTextField;
+
+  /**
+   * Anker ID field in *Anchor → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: anchor.default.primary.anchor_id
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  anchor_id: prismic.KeyTextField;
 }
 
 /**
