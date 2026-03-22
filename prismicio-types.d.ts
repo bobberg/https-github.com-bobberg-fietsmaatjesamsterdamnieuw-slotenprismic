@@ -70,6 +70,7 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type PageDocumentDataSlicesSlice =
+  | AnchorSlice
   | ContactFormSlice
   | ContactFormValidatedSlice
   | ContactFormSponsorSlice
@@ -566,16 +567,6 @@ export type AllDocumentTypes =
  */
 export interface AnchorSliceDefaultPrimary {
   /**
-   * Titel field in *Anchor → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: anchor.default.primary.title
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  title: prismic.RichTextField;
-
-  /**
    * Anker ID field in *Anchor → Default → Primary*
    *
    * - **Field Type**: Text
@@ -584,6 +575,16 @@ export interface AnchorSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   anchor_id: prismic.KeyTextField;
+
+  /**
+   * Label field in *Anchor → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: anchor.default.primary.label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  label: prismic.KeyTextField;
 }
 
 /**
