@@ -562,6 +562,58 @@ export type AllDocumentTypes =
   | SocialDocument;
 
 /**
+ * Primary content in *Anchor → Default → Primary*
+ */
+export interface AnchorSliceDefaultPrimary {
+  /**
+   * Titel field in *Anchor → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: anchor.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Anker ID field in *Anchor → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: anchor.default.primary.anchor_id
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  anchor_id: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Anchor Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type AnchorSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AnchorSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Anchor*
+ */
+type AnchorSliceVariation = AnchorSliceDefault;
+
+/**
+ * Anchor Shared Slice
+ *
+ * - **API ID**: `anchor`
+ * - **Description**: Anchor
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type AnchorSlice = prismic.SharedSlice<"anchor", AnchorSliceVariation>;
+
+/**
  * Default variation for Archive Slice
  *
  * - **API ID**: `default`
@@ -1859,6 +1911,10 @@ declare module "@prismicio/client" {
       SocialDocumentData,
       SocialDocumentDataSocialItemItem,
       AllDocumentTypes,
+      AnchorSlice,
+      AnchorSliceDefaultPrimary,
+      AnchorSliceVariation,
+      AnchorSliceDefault,
       ArchiveSlice,
       ArchiveSliceVariation,
       ArchiveSliceDefault,
