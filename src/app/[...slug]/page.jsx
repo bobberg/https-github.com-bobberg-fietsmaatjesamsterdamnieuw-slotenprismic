@@ -41,6 +41,22 @@ const Page = () => {
         fetchContent();
     }, [slug, router]);
 
+    useEffect(() => {
+        // See if the URL has a hash (e.g. #history)
+        const hash = window.location.hash;
+        
+        if (hash) {
+            // Wait a seconde so Prismic can generate the HTML
+            setTimeout(() => {
+                const element = document.querySelector(hash);
+                if (element) {
+                    // Scroll smoothly to the anchor link
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 1000);
+        }
+    }, []); // the empty array [] make sure this only happens when the page is loaded
+
     // Render NotFound component if there is an error
     if (error) {
         return <NotFound />;
