@@ -9,9 +9,10 @@ const Anchor = ({ slice }) => {
     <section id={sectionId} 
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      style={{ width: '100%', height: '10px' }}
     >
-      <br />
-      {/**
+    {
+      /**
        * 💡 Use the Prismic MCP server with your code editor
        * 📚 Docs: https://prismic.io/docs/ai#code-with-prismics-mcp-server
        */}
