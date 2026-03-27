@@ -41,7 +41,7 @@ async function buildMenu() {
             // 3. Create submenu items from the anchor slices
             const sliceItems = slices.map(slice => ({
                 id: slice.primary.anchor_id,
-                uid: mainPage.uid,
+                uid: slice.primary.anchor_id,
                 url: `${mainPage.url}#${slice.primary.anchor_id}`,
                 label: slice.primary.label 
             }));
