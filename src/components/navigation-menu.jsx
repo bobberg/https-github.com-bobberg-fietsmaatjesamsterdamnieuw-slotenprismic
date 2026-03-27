@@ -34,6 +34,7 @@ const NavigationMenu = ({ menuItems }) => {
   const handleMenuItemClick = () => {
     setIsOpen(false);
     setOpenSubMenu(null);
+    setHoveredItem(null)
   };
 
   // Handles hover state for medium screens and above
@@ -126,6 +127,7 @@ const NavigationMenu = ({ menuItems }) => {
                 role="submenu"
                 className="relative md:absolute top-full left-0 
                 md:w-[220px] pt-2 md:pt-0 block sub-menu"
+                onClick={() => {handleMenuItemClick()}}
                 onMouseEnter={() => handleMouseEnter(item)}
                 onMouseLeave={() => handleMouseLeave(item)}
               >
