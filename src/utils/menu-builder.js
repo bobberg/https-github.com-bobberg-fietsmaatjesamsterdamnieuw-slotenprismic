@@ -6,8 +6,8 @@ function getSlicesWithAnchors(page) {
     return [];
   }
   const slicesWithAnchors = page.data.slices.filter(slice => {
-    // We checken of de slice een primary sectie heeft én of anchor_id is ingevuld.
-    // Boolean() zorgt ervoor dat lege strings, null of undefined eruit worden gefilterd.
+    // Check if a slice has a primary section with an anchor_id.
+    // With Boolean() we filter empty strings, null of undefined.
     return Boolean(slice.primary?.anchor_id);
   });
 
@@ -33,7 +33,6 @@ async function buildMenu() {
             const subPageItems = subPages.map(subPage => ({
                 id: subPage.id,
                 uid: subPage.uid,
-                // Note: watch out for double slashes if Prismic already returns a full path
                 url: `${mainPage.url}${subPage.url}`, 
                 label: subPage.data.title[0].text
             }));
@@ -47,7 +46,7 @@ async function buildMenu() {
             }));
 
             // 4. Combine both arrays into a single submenu
-            const combinedSubmenu = [...subPageItems, ...sliceItems];
+            const combinedSubmenu = [...sliceItems, ...subPageItems];
 
             // 5. Add the complete item to the main menu
             menu.push({
