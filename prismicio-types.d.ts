@@ -658,11 +658,11 @@ export type ArchiveSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *ContactForm → Default → Primary*
+ * Primary content in *ContactFormVrijwilleger → Default → Primary*
  */
 export interface ContactFormSliceDefaultPrimary {
   /**
-   * Begeleidende tekst field in *ContactForm → Default → Primary*
+   * Begeleidende tekst field in *ContactFormVrijwilleger → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: Begeleidende tekst
@@ -673,7 +673,7 @@ export interface ContactFormSliceDefaultPrimary {
 }
 
 /**
- * Default variation for ContactForm Slice
+ * Default variation for ContactFormVrijwilleger Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -686,7 +686,7 @@ export type ContactFormSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Inschrijfformulier variation for ContactForm Slice
+ * Inschrijfformulier variation for ContactFormVrijwilleger Slice
  *
  * - **API ID**: `inschrijfformulier`
  * - **Description**: Default
@@ -699,14 +699,14 @@ export type ContactFormSliceInschrijfformulier = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *ContactForm*
+ * Slice variation for *ContactFormVrijwilleger*
  */
 type ContactFormSliceVariation =
   | ContactFormSliceDefault
   | ContactFormSliceInschrijfformulier;
 
 /**
- * ContactForm Shared Slice
+ * ContactFormVrijwilleger Shared Slice
  *
  * - **API ID**: `contact_form`
  * - **Description**: ContactForm
@@ -779,11 +779,11 @@ export type ContactFormSponsorSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *ContactFormValidated → Default → Primary*
+ * Primary content in *ContactFormGast → Default → Primary*
  */
 export interface ContactFormValidatedSliceDefaultPrimary {
   /**
-   * Begeleidende tekst field in *ContactFormValidated → Default → Primary*
+   * Begeleidende tekst field in *ContactFormGast → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: Begeleidende tekst
@@ -793,7 +793,7 @@ export interface ContactFormValidatedSliceDefaultPrimary {
   body: prismic.RichTextField;
 
   /**
-   * Toegestane postcodes field in *ContactFormValidated → Default → Primary*
+   * Toegestane postcodes field in *ContactFormGast → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: 1066,1060,1065,1068,1069
@@ -804,7 +804,7 @@ export interface ContactFormValidatedSliceDefaultPrimary {
 }
 
 /**
- * Default variation for ContactFormValidated Slice
+ * Default variation for ContactFormGast Slice
  *
  * - **API ID**: `default`
  * - **Description**: Contact form that validates postal codes against allowed Amsterdam area codes
@@ -817,11 +817,11 @@ export type ContactFormValidatedSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *ContactFormValidated → Inschrijfformulier → Primary*
+ * Primary content in *ContactFormGast → Inschrijfformulier → Primary*
  */
 export interface ContactFormValidatedSliceInschrijfformulierPrimary {
   /**
-   * Toegestane postcodes field in *ContactFormValidated → Inschrijfformulier → Primary*
+   * Toegestane postcodes field in *ContactFormGast → Inschrijfformulier → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: 1066,1060,1065,1068,1069
@@ -832,7 +832,7 @@ export interface ContactFormValidatedSliceInschrijfformulierPrimary {
 }
 
 /**
- * Inschrijfformulier variation for ContactFormValidated Slice
+ * Inschrijfformulier variation for ContactFormGast Slice
  *
  * - **API ID**: `inschrijfformulier`
  * - **Description**: Registration form variant with postal code validation
@@ -846,14 +846,14 @@ export type ContactFormValidatedSliceInschrijfformulier =
   >;
 
 /**
- * Slice variation for *ContactFormValidated*
+ * Slice variation for *ContactFormGast*
  */
 type ContactFormValidatedSliceVariation =
   | ContactFormValidatedSliceDefault
   | ContactFormValidatedSliceInschrijfformulier;
 
 /**
- * ContactFormValidated Shared Slice
+ * ContactFormGast Shared Slice
  *
  * - **API ID**: `contact_form_validated`
  * - **Description**: Contact form with postal code validation

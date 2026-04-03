@@ -5,9 +5,9 @@ import dynamic from "next/dynamic";
 export const components = {
   anchor: dynamic(() => import("./Anchor")),
   archive: dynamic(() => import("./Archive")),
-  contact_form: dynamic(() => import("./ContactForm")),
+  contact_form: dynamic(() => import("./ContactFormVrijwilleger")),
   contact_form_sponsor: dynamic(() => import("./ContactFormSponsor")),
-  contact_form_validated: dynamic(() => import("./ContactFormValidated")),
+  contact_form_validated: dynamic(() => import("./ContactFormGast")),
   content_cards: dynamic(() => import("./ContentCards")),
   contentcard: dynamic(() => import("./InfoCards")),
   faq: dynamic(() => import("./Faq")),

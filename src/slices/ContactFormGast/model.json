@@ -1,7 +1,7 @@
 {
   "id": "contact_form_validated",
   "type": "SharedSlice",
-  "name": "ContactFormValidated",
+  "name": "ContactFormGast",
   "description": "Contact form with postal code validation",
   "variations": [
     {
