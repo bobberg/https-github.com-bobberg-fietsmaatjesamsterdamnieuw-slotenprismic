@@ -66,6 +66,9 @@
             "i_frame": {
               "type": "SharedSlice"
             },
+            "info_form": {
+              "type": "SharedSlice"
+            },
             "faq": {
               "type": "SharedSlice"
             },
