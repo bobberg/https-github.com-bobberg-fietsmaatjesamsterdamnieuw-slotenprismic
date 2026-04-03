@@ -75,6 +75,7 @@ type PageDocumentDataSlicesSlice =
   | ContactFormValidatedSlice
   | ContactFormSponsorSlice
   | IFrameSlice
+  | InfoFormSlice
   | FaqSlice
   | ArchiveSlice
   | LatestNewsSlice
