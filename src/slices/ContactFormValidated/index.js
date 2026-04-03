@@ -21,7 +21,8 @@ const ContactFormValidated = ({ slice }) => {
     achternaam: '',
     email: '',
     telefoonnummer: '',
-    woonplaats: '',
+    postcode: '',
+    adres: '',
     geslacht: '',
     message: ''
   });
@@ -46,10 +47,10 @@ const ContactFormValidated = ({ slice }) => {
   // Handle form submission
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    const { voornaam, email, woonplaats } = formData;
+    const { voornaam, achternaam, telefoonnummer, postcode, adres } = formData;
 
     // Check required fields
-    if (!voornaam || !email || !woonplaats) {
+    if (!voornaam || !achternaam || !telefoonnummer || !postcode || !adres) {
       setErrorMessage('Vul alle verplichte velden in.');
       return;
     }
@@ -106,7 +107,7 @@ const ContactFormValidated = ({ slice }) => {
               />
             </label>
             <label className="lg:w-1/2">
-              Achternaam:
+              Achternaam: <span className="text-red-500">*</span>
               <input
                 type="text"
                 name="achternaam"
@@ -122,7 +123,26 @@ const ContactFormValidated = ({ slice }) => {
           </div>
           <div className="lg:flex lg:gap-2">
             <label className="lg:w-1/2">
-              Email: <span className="text-red-500">*</span>
+              Geslacht:
+              <select
+                name="geslacht"
+                className="
+                  text-black text-xs 
+                  w-full p-2 mb-4 
+                  bg-white rounded
+                "
+                value={formData.geslacht}
+                onChange={handleInputChange}
+              >
+                <option value="">Selecteer...</option>
+                <option value="Man">Man</option>
+                <option value="Vrouw">Vrouw</option>
+                <option value="Anders">Anders</option>
+                <option value="Wil ik niet zeggen">Wil ik niet zeggen</option>
+              </select>
+            </label>
+            <label className="lg:w-1/2">
+              Email:
               <input
                 type="email"
                 name="email"
@@ -136,8 +156,10 @@ const ContactFormValidated = ({ slice }) => {
               />
               <ValidationError prefix="Email" field="email" errors={state.errors} />
             </label>
+          </div>
+          <div className="lg:flex lg:gap-2">
             <label className="lg:w-1/2">
-              Telefoonnummer:
+              Telefoonnummer: <span className="text-red-500">*</span>
               <input
                 type="tel"
                 name="telefoonnummer"
@@ -150,43 +172,38 @@ const ContactFormValidated = ({ slice }) => {
                 onChange={handleInputChange}
               />
             </label>
+            <label className="lg:w-1/2">
+              Postcode: <span className="text-red-500">*</span>
+              <select
+                name="postcode"
+                className="
+                  text-black text-xs 
+                  w-full p-2 mb-4 
+                  bg-white rounded
+                "
+                value={formData.postcode}
+                onChange={handleInputChange}
+              >
+                <option value="">Selecteer postcodegebied...</option>
+                {allowedCodes.map((code) => (
+                  <option key={code} value={code}>{code}</option>
+                ))}
+              </select>
+            </label>
           </div>
           <label>
-            Postcode: <span className="text-red-500">*</span>
-            <select
-              name="woonplaats"
+            Straatnaam en huisnummer: <span className="text-red-500">*</span>
+            <input
+              type="text"
+              name="adres"
               className="
                 text-black text-xs 
-                w-full p-2 mb-4 
+                w-full p-2 
                 bg-white rounded
               "
-              value={formData.woonplaats}
+              value={formData.adres}
               onChange={handleInputChange}
-            >
-              <option value="">Selecteer postcode...</option>
-              {allowedCodes.map((code) => (
-                <option key={code} value={code}>{code}</option>
-              ))}
-            </select>
-          </label>
-          <label>
-            Geslacht:
-            <select
-              name="geslacht"
-              className="
-                text-black text-xs 
-                w-full p-2 mb-4 
-                bg-white rounded
-              "
-              value={formData.geslacht}
-              onChange={handleInputChange}
-            >
-              <option value="">Selecteer...</option>
-              <option value="Man">Man</option>
-              <option value="Vrouw">Vrouw</option>
-              <option value="Anders">Anders</option>
-              <option value="Wil ik niet zeggen">Wil ik niet zeggen</option>
-            </select>
+            />
           </label>
           <label>
             <textarea
