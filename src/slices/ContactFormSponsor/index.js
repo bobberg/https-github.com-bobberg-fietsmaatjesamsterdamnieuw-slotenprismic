@@ -12,7 +12,7 @@ import { PrismicRichText } from "@prismicio/react";
 const ContactFormSponsor = ({ slice }) => {
   const [state, handleSubmit] = useForm("mbllqjqb");
   const [formData, setFormData] = useState({
-    contactpersoon: '',
+    naam: '',
     email: '',
     telefoonnummer: '',
     bedrijfsnaam: '',
@@ -34,10 +34,10 @@ const ContactFormSponsor = ({ slice }) => {
   // Handle form submission
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    const { contactpersoon, email } = formData;
+    const { naam, email } = formData;
 
     // Check required fields
-    if (!contactpersoon || !email) {
+    if (!naam || !email) {
       setErrorMessage('Vul alle verplichte velden in.');
       return;
     }
@@ -79,16 +79,16 @@ const ContactFormSponsor = ({ slice }) => {
           onSubmit={handleFormSubmit}
         >
           <label>
-            Contactpersoon: <span className="text-red-500">*</span>
+            Naam: <span className="text-red-500">*</span>
             <input
               type="text"
-              name="contactpersoon"
+              name="naam"
               className="
                 text-black text-xs 
                 w-full p-2 mb-4
                 bg-white rounded
               "
-              value={formData.contactpersoon}
+              value={formData.naam}
               onChange={handleInputChange}
             />
           </label>
