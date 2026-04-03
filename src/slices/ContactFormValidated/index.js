@@ -205,6 +205,7 @@ const ContactFormValidated = ({ slice }) => {
               onChange={handleInputChange}
             />
           </label>
+          <br />
           <label>
             <textarea
               name="message"
