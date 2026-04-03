@@ -1393,6 +1393,51 @@ type IFrameSliceVariation = IFrameSliceDefault;
 export type IFrameSlice = prismic.SharedSlice<"i_frame", IFrameSliceVariation>;
 
 /**
+ * Primary content in *InfoForm → Default → Primary*
+ */
+export interface InfoFormSliceDefaultPrimary {
+  /**
+   * Begeleidende tekst field in *InfoForm → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Begeleidende tekst
+   * - **API ID Path**: info_form.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+}
+
+/**
+ * Default variation for InfoForm Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type InfoFormSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<InfoFormSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *InfoForm*
+ */
+type InfoFormSliceVariation = InfoFormSliceDefault;
+
+/**
+ * InfoForm Shared Slice
+ *
+ * - **API ID**: `info_form`
+ * - **Description**: InfoForm
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type InfoFormSlice = prismic.SharedSlice<
+  "info_form",
+  InfoFormSliceVariation
+>;
+
+/**
  * Default variation for LatestNews Slice
  *
  * - **API ID**: `default`
@@ -1964,6 +2009,10 @@ declare module "@prismicio/client" {
       IFrameSliceDefaultPrimary,
       IFrameSliceVariation,
       IFrameSliceDefault,
+      InfoFormSlice,
+      InfoFormSliceDefaultPrimary,
+      InfoFormSliceVariation,
+      InfoFormSliceDefault,
       LatestNewsSlice,
       LatestNewsSliceVariation,
       LatestNewsSliceDefault,

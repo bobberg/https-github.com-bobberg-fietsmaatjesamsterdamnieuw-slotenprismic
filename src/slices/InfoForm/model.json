@@ -1,0 +1,38 @@
+{
+  "id": "info_form",
+  "type": "SharedSlice",
+  "name": "InfoForm",
+  "description": "Contact form",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Contact form",
+      "imageUrl": "",
+      "primary": {
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Begeleidende tekst",
+            "placeholder": "Begeleidende tekst",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item,image"
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "infoformulier",
+      "name": "Contactformulier",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Information form",
+      "imageUrl": "",
+      "primary": {},
+      "items": {}
+    }
+  ]
+}

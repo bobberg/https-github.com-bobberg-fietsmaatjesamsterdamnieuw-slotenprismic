@@ -12,6 +12,7 @@ export const components = {
   contentcard: dynamic(() => import("./InfoCards")),
   faq: dynamic(() => import("./Faq")),
   i_frame: dynamic(() => import("./IFrame")),
+  info_form: dynamic(() => import("./InfoForm")),
   latest_news: dynamic(() => import("./LatestNews")),
   logos: dynamic(() => import("./Logos")),
   section: dynamic(() => import("./Section")),
