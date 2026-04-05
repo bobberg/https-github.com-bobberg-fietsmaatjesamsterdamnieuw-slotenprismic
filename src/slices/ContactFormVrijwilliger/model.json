@@ -1,7 +1,7 @@
 {
   "id": "contact_form",
   "type": "SharedSlice",
-  "name": "ContactFormVrijwilleger",
+  "name": "ContactFormVrijwilliger",
   "description": "ContactForm",
   "variations": [
     {

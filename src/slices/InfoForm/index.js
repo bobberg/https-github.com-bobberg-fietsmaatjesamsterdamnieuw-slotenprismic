@@ -33,10 +33,10 @@ const InfoForm = ({ slice }) => {
   // Handle form submission
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    const { naam, email } = formData;
+    const { naam, email, message } = formData;
 
     // Check required fields
-    if (!naam || !email) {
+    if (!naam || !email || !message) {
       setErrorMessage('Vul alle verplichte velden in.');
       return;
     }
@@ -122,6 +122,7 @@ const InfoForm = ({ slice }) => {
               />
             </label>
           </div>
+          <br />
           <label>
             <textarea
               name="message"

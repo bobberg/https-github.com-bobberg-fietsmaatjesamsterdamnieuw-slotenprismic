@@ -659,11 +659,11 @@ export type ArchiveSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *ContactFormVrijwilleger → Default → Primary*
+ * Primary content in *ContactFormVrijwilliger → Default → Primary*
  */
 export interface ContactFormSliceDefaultPrimary {
   /**
-   * Begeleidende tekst field in *ContactFormVrijwilleger → Default → Primary*
+   * Begeleidende tekst field in *ContactFormVrijwilliger → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: Begeleidende tekst
@@ -674,7 +674,7 @@ export interface ContactFormSliceDefaultPrimary {
 }
 
 /**
- * Default variation for ContactFormVrijwilleger Slice
+ * Default variation for ContactFormVrijwilliger Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -687,7 +687,7 @@ export type ContactFormSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Inschrijfformulier variation for ContactFormVrijwilleger Slice
+ * Inschrijfformulier variation for ContactFormVrijwilliger Slice
  *
  * - **API ID**: `inschrijfformulier`
  * - **Description**: Default
@@ -700,14 +700,14 @@ export type ContactFormSliceInschrijfformulier = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *ContactFormVrijwilleger*
+ * Slice variation for *ContactFormVrijwilliger*
  */
 type ContactFormSliceVariation =
   | ContactFormSliceDefault
   | ContactFormSliceInschrijfformulier;
 
 /**
- * ContactFormVrijwilleger Shared Slice
+ * ContactFormVrijwilliger Shared Slice
  *
  * - **API ID**: `contact_form`
  * - **Description**: ContactForm
@@ -1412,7 +1412,7 @@ export interface InfoFormSliceDefaultPrimary {
  * Default variation for InfoForm Slice
  *
  * - **API ID**: `default`
- * - **Description**: Default
+ * - **Description**: Contact form
  * - **Documentation**: https://prismic.io/docs/slices
  */
 export type InfoFormSliceDefault = prismic.SharedSliceVariation<
@@ -1422,15 +1422,28 @@ export type InfoFormSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Contactformulier variation for InfoForm Slice
+ *
+ * - **API ID**: `infoformulier`
+ * - **Description**: Information form
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type InfoFormSliceInfoformulier = prismic.SharedSliceVariation<
+  "infoformulier",
+  Record<string, never>,
+  never
+>;
+
+/**
  * Slice variation for *InfoForm*
  */
-type InfoFormSliceVariation = InfoFormSliceDefault;
+type InfoFormSliceVariation = InfoFormSliceDefault | InfoFormSliceInfoformulier;
 
 /**
  * InfoForm Shared Slice
  *
  * - **API ID**: `info_form`
- * - **Description**: InfoForm
+ * - **Description**: Contact form
  * - **Documentation**: https://prismic.io/docs/slices
  */
 export type InfoFormSlice = prismic.SharedSlice<
@@ -2014,6 +2027,7 @@ declare module "@prismicio/client" {
       InfoFormSliceDefaultPrimary,
       InfoFormSliceVariation,
       InfoFormSliceDefault,
+      InfoFormSliceInfoformulier,
       LatestNewsSlice,
       LatestNewsSliceVariation,
       LatestNewsSliceDefault,
