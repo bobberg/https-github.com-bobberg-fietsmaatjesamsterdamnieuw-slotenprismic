@@ -50,22 +50,23 @@ const InfoForm = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="
-        flex w-full h-full p-2 lg:p-8 gap-6
-        flex-col
+        flex w-full h-full p-2 lg:p-8 gap-10 
+        flex-col lg:flex-row
       "
     >
-      <div className={`
-        text-justify
-        ${slice.variation === "infoformulier" ? "hidden" : ""}
-      `}>
-        <h1 className="px-4 py-4">Contact</h1>
-        <div className="p-4">
-          <PrismicRichText
-            components={{
-              paragraph: ({ children }) => <p className="pb-2">{children}</p>,
-            }}
-            field={slice.primary.body}
-          />
+      <div className="text-justify">
+        <div className={`
+          ${slice.variation == "infoformulier" ? "hidden" : ""}
+        `}>
+          <h1 className="px-4 py-4">Contact</h1>
+          <div className="p-4 lg:max-w-[70dvw]">
+            <PrismicRichText
+              components={{
+                paragraph: ({ children }) => <p className="pb-2">{children}</p>,
+              }}
+              field={slice.primary.body}
+            />
+          </div>
         </div>
       </div>
       <div className="w-full flex items-center justify-center">
