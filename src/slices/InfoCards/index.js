@@ -84,7 +84,7 @@ const InfoCardsItem = ({ item, variation, isExpanded, toggleExpanded }) => {
         ${canExpand ? 'cursor-pointer' : ''}
         ${isExpanded ? 'row-span-2' : ''}
       `}
-    >S
+    >
       {item.icon && (
         <ReactSVG
           src={`data:image/svg+xml;base64,${btoa(item.icon)}`}
