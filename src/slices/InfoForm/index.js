@@ -10,7 +10,7 @@ import { PrismicRichText } from "@prismicio/react";
  * @param {InfoFormProps}
  */
 const InfoForm = ({ slice }) => {
-  const [state, handleSubmit] = useForm("mbllqjqb");
+  const [state, handleSubmit] = useForm("maqlrwqy");
   const [formData, setFormData] = useState({
     naam: '',
     email: '',

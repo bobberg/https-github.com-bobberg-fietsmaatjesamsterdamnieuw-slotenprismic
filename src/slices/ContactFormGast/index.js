@@ -15,7 +15,7 @@ const DEFAULT_POSTAL_CODES = ['1060', '1065', '1066', '1068', '1069'];
  * @param {ContactFormValidatedProps}
  */
 const ContactFormValidated = ({ slice }) => {
-  const [state, handleSubmit] = useForm("mbllqjqb");
+  const [state, handleSubmit] = useForm("mjgpnbvn");
   const [formData, setFormData] = useState({
     voornaam: '',
     achternaam: '',
