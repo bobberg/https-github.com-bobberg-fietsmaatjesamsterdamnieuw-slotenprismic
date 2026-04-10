@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { PrismicNextLink } from '@prismicio/next';
 import { PrismicRichText } from '@prismicio/react';
 import { ReactSVG } from 'react-svg';
+import { asLink } from '@prismicio/client';
 
 /**
  * @typedef {import("@prismicio/client").Content.InfoCardsSlice} InfoCardsSlice
@@ -66,17 +67,24 @@ const InfoCards = ({ slice }) => {
 const InfoCardsItem = ({ item, variation, isExpanded, toggleExpanded }) => {
   const canExpand = variation === "infoCardsExpandable";
   
+  const handleClick = (item) => {
+    const url = asLink(item.link);
+    if (url) {
+      window.location.href = url;
+    }
+  };
+
   return (
     <div
-      onClick={canExpand ? toggleExpanded : undefined}
+      onClick={canExpand ? toggleExpanded : () => handleClick(item)}
       className={`
         group flex flex-col p-6 rounded-xl border border-gray-200 bg-white
-        shadow-sm hover:shadow-md transition-all duration-300 ease-in-out
+        shadow-sm hover:bg-secondary transition-all duration-300 ease-in-out
         items-center justify-start text-center gap-4 h-full cursor-pointer
         ${canExpand ? 'cursor-pointer' : ''}
         ${isExpanded ? 'row-span-2' : ''}
       `}
-    >
+    >S
       {item.icon && (
         <ReactSVG
           src={`data:image/svg+xml;base64,${btoa(item.icon)}`}
