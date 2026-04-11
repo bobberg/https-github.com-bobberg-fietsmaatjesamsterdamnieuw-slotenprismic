@@ -276,7 +276,7 @@ export const renderGroupedItems = (groupedItems, toggleYear, toggleMonth, expand
                         {groupedItems[year][month]
                           .sort(
                             (a, b) =>
-                              new Date(b.date) - new Date(a.date)
+                              new Date(b.data.date) - new Date(a.data.date)
                           )
                           .map((item, index) => {
                             const publicationDate = item.data.date;

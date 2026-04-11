@@ -114,7 +114,7 @@ async function fetchNewsContent(latest) {
     const client = createClient();
     const response = await client.getByType('post');
     const sortedResults = response.results
-      .sort((a, b) => new Date(b.date) - new Date(a.date));
+      .sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
 
     return latest ? sortedResults.slice(0, 3) : sortedResults;
   } catch (error) {
