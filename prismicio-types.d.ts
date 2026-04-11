@@ -229,6 +229,17 @@ interface PostDocumentData {
   body: prismic.RichTextField;
 
   /**
+   * Datum field in *Nieuwsbrief*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post.date
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/date
+   */
+  date: prismic.DateField;
+
+  /**
    * Slice Zone field in *Nieuwsbrief*
    *
    * - **Field Type**: Slice Zone
