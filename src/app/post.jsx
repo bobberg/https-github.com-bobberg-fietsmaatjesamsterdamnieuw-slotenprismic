@@ -2,9 +2,9 @@ import { PrismicImage, PrismicRichText } from "@prismicio/react";
 import { dateResolver } from "@/utils/helpers";
 
 // Post component to display a news item
-const Post = ({ data, first_publication_date }) => {
+const Post = ({ data }) => {
   // Resolve the publication date
-  const resolvedDate = dateResolver(first_publication_date.split("T")[0]);
+  const resolvedDate = dateResolver(data.date);
 
   return (
     <div className="

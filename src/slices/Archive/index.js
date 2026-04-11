@@ -195,7 +195,7 @@ const Archive = ({ slice: { variation, slice_type } }) => {
 // Group items by year and month
 const groupItemsByDate = (items) => {
   return items.reduce((acc, item) => {
-    const publicationDate = new Date(item.first_publication_date);
+    const publicationDate = new Date(item.data.date);
     const year = publicationDate.getFullYear();
     const month = publicationDate.getMonth() + 1;
 
@@ -276,10 +276,10 @@ export const renderGroupedItems = (groupedItems, toggleYear, toggleMonth, expand
                         {groupedItems[year][month]
                           .sort(
                             (a, b) =>
-                              new Date(b.first_publication_date) - new Date(a.first_publication_date)
+                              new Date(b.date) - new Date(a.date)
                           )
                           .map((item, index) => {
-                            const publicationDate = item.first_publication_date.split("T")[0];
+                            const publicationDate = item.data.date;
                             const itemBgColor =
                               window.location.hash.substring(1) === item.uid
                                 ? "bg-secondary"

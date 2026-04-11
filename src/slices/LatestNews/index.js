@@ -10,9 +10,8 @@ import { dateResolver } from '@/utils/helpers';
  * @typedef {import("@prismicio/react").SliceComponentProps<LatestNewsSlice>} LatestNewsProps
  * @param {LatestNewsProps}
  */
-const LatestNews = ({ slice, context }) => {
+const LatestNews = ({ slice }) => {
   const [news, setNews] = useState([]);
-  const dateFromPage = context.pageDate;
 
   // Fetch latest news on component mount
   useEffect(() => {
@@ -46,7 +45,7 @@ const LatestNews = ({ slice, context }) => {
       >
         {news.length > 0 ? (
           news.map((item, index) => {
-            const formattedDate = dateResolver(dateFromPage);
+            const formattedDate = dateResolver(item.data.date);
             const hasImage = item.data.image && item.data.image.url;
 
             // Concatenate all text blocks into a single string
