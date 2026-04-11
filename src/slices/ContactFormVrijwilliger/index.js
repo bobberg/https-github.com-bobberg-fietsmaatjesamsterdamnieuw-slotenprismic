@@ -22,7 +22,6 @@ const ContactForm = ({ slice }) => {
     message: ''
   });
   const [errorMessage, setErrorMessage] = useState('');
-  const [warningMessage, setWarningMessage] = useState('');
 
   // Handle input change
   const handleInputChange = (event) => {
@@ -39,16 +38,6 @@ const ContactForm = ({ slice }) => {
     if (!voornaam || !achternaam || !email || !telefoonnummer || !adres) {
       setErrorMessage('Vul alle verplichte velden in.');
       return;
-    }
-    
-    // Check postal code format (warning, not blocking)
-    const validPostcodes = ['1066', '1060', '1065', '1068', '1069'];
-    const postalCodePrefix = postcode.trim().substring(0, 4);
-    
-    if (!validPostcodes.includes(postalCodePrefix)) {
-      setWarningMessage('Let op: De postcode valt mogelijk buiten ons werkgebied (1060, 1065, 1066, 1068, 1069).');
-    } else {
-      setWarningMessage('');
     }
     
     setErrorMessage('');
@@ -226,7 +215,6 @@ const ContactForm = ({ slice }) => {
             Verzenden
           </button>
           {state.succeeded && <p className="bg-green-500 mt-2 text-white rounded-lg p-2 font-bold">Formulier succesvol verzonden!</p>}
-          {warningMessage && <p className="bg-yellow-500 mt-2 text-black rounded-lg p-2 font-bold">{warningMessage}</p>}
           {errorMessage && <p className="bg-red-500 mt-2 text-white rounded-lg p-2 font-bold">{errorMessage}</p>}
           {state.errors && <p className="bg-red-500 mt-2 text-white rounded-lg p-2 font-bold">Er is een fout opgetreden bij het verzenden van het formulier.</p>}
         </form>
