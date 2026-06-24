@@ -15,6 +15,7 @@ const InfoForm = ({ slice }) => {
     naam: '',
     email: '',
     telefoonnummer: '',
+    postcode: '',
     message: ''
   });
   const [errorMessage, setErrorMessage] = useState('');
@@ -33,10 +34,10 @@ const InfoForm = ({ slice }) => {
   // Handle form submission
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    const { naam, email, message } = formData;
+    const { naam, email, postcode, message } = formData;
 
     // Check required fields
-    if (!naam || !email || !message) {
+    if (!naam || !email || !postcode || !message) {
       setErrorMessage('Vul alle verplichte velden in.');
       return;
     }
@@ -92,22 +93,22 @@ const InfoForm = ({ slice }) => {
               onChange={handleInputChange}
             />
           </label>
+          <label>
+            Email: <span className="text-red-500">*</span>
+            <input
+              type="email"
+              name="email"
+              className="
+                text-black text-xs 
+                w-full p-2 
+                bg-white rounded
+              "
+              value={formData.email}
+              onChange={handleInputChange}
+            />
+            <ValidationError prefix="Email" field="email" errors={state.errors} />
+          </label>
           <div className="lg:flex lg:gap-2">
-            <label className="lg:w-1/2">
-              Email: <span className="text-red-500">*</span>
-              <input
-                type="email"
-                name="email"
-                className="
-                  text-black text-xs 
-                  w-full p-2 
-                  bg-white rounded
-                "
-                value={formData.email}
-                onChange={handleInputChange}
-              />
-              <ValidationError prefix="Email" field="email" errors={state.errors} />
-            </label>
             <label className="lg:w-1/2">
               Telefoonnummer:
               <input
@@ -119,6 +120,20 @@ const InfoForm = ({ slice }) => {
                   bg-white rounded
                 "
                 value={formData.telefoonnummer}
+                onChange={handleInputChange}
+              />
+            </label>
+            <label className="lg:w-1/2">
+              Postcode: <span className="text-red-500">*</span>
+              <input
+                type="text"
+                name="postcode"
+                className="
+                  text-black text-xs 
+                  w-full p-2 mb-4 
+                  bg-white rounded
+                "
+                value={formData.postcode}
                 onChange={handleInputChange}
               />
             </label>
