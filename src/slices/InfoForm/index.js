@@ -34,10 +34,10 @@ const InfoForm = ({ slice }) => {
   // Handle form submission
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    const { naam, email, postcode, message } = formData;
+    const { naam, email, telefoonnummer ,postcode, message } = formData;
 
     // Check required fields
-    if (!naam || !email || !postcode || !message) {
+    if (!naam || !email || !telefoonnummer || !postcode || !message) {
       setErrorMessage('Vul alle verplichte velden in.');
       return;
     }
@@ -110,7 +110,7 @@ const InfoForm = ({ slice }) => {
           </label>
           <div className="lg:flex lg:gap-2">
             <label className="lg:w-1/2">
-              Telefoonnummer:
+              Telefoonnummer: <span className="text-red-500">*</span>
               <input
                 type="tel"
                 name="telefoonnummer"
