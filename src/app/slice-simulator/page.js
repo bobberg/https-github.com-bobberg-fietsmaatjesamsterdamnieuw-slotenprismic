@@ -12,11 +12,7 @@ export default async function SliceSimulatorPage({ searchParams }) {
 
   return (
     <SliceSimulator>
-      <SliceZone
-        slices={slices}
-        components={components}
-        context={{ pageDate: page.data.date }} // Pass the date into context
-      />
+      <SliceZone slices={slices} components={components} />
     </SliceSimulator>
   );
 }

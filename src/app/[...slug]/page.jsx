@@ -67,11 +67,7 @@ const Page = () => {
             <main className="mb-4 flex-grow overflow-auto break-words whitespace-normal h-full w-full">
                 {content && (
                     <div className="flex flex-row flex-wrap items-center justify-center">
-                        <SliceZone
-                            slices={content.data.slices}
-                            components={components}
-                            context={{ pageDate: content.data.date }} // Pass the date into context
-                        />
+                        <SliceZone slices={content.data.slices} components={components} />
                     </div>
                 )}
             </main>

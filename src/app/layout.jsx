@@ -1,3 +1,4 @@
+import {ClerkProvider} from "@clerk/nextjs";
 import './globals.css';
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
@@ -19,24 +20,26 @@ export default async function RootLayout({ children }) {
         <meta name="keywords" content="fietsmaatjes, fietsmaatje, amsterdam, nieuw-sloten, duofiets, samenfietsen, fietsen, fiets, maatje, maatjes" />
       </Head>
       <body className="h-[100dvh] w-[100dvw] flex flex-col">
-        <header className={`
+        <ClerkProvider>
+          <header className={`
           fixed top-0 left-0 w-full h-16 px-4
           bg-primary flex items-center justify-between z-10
-        `}>
+          `}>
           {/* Render navigation menu with fetched menu items */}
           <NavigationMenu menuItems={menuItems} />
           <div className="flex items-center gap-4">
-            {/* Render social bar and search bar */}
-            <SocialBar />
-            <SearchBar />
+          {/* Render social bar and search bar */}
+          <SocialBar />
+          <SearchBar />
           </div>
-        </header>
-        <main className="flex-grow mt-16">
+          </header>
+          <main className="flex-grow mt-16">
           {/* Render children components */}
           {children}
           {/* Prismic preview component */}
           <PrismicPreview repositoryName={repositoryName} />
-        </main>
+          </main>
+        </ClerkProvider>
       </body>
     </html>
   );
